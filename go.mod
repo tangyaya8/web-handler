@@ -1,1 +1,1 @@
-module webHandler
+module web-handler
