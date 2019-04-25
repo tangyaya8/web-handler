@@ -2,7 +2,7 @@ package handler
 
 import (
 	"strings"
-	. "webHandler/config"
+	. "web-handler/config"
 )
 
 type Param struct {
