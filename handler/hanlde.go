@@ -3,8 +3,12 @@ package handler
 import (
 	"strings"
 	. "webHandler/config"
-	. "webHandler/route"
 )
+
+type Param struct {
+	Name  string
+	Value string
+}
 
 func DealWithUrl(path string) (pathSlice []string) {
 	pathSlice = strings.Split(
