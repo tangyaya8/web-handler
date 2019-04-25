@@ -4,8 +4,8 @@ import (
 	"log"
 	"net/http"
 	"strings"
-	. "webHandler/config"
-	. "webHandler/handler"
+	. "web-handler/config"
+	. "web-handler/handler"
 )
 
 type WebHandler struct {
