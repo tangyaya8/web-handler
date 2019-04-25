@@ -5,18 +5,13 @@ import (
 	"net/http"
 	"strings"
 	. "webHandler/config"
-	"webHandler/handler"
+	. "webHandler/handler"
 )
 
 type WebHandler struct {
 	URL             string
 	MethodHandler   http.Handler
 	NotFountHandler http.Handler
-}
-
-type Param struct {
-	Name  string
-	Value string
 }
 
 func New() *WebHandler {
@@ -48,7 +43,6 @@ type Req func(writer http.ResponseWriter, request *http.Request, param *[]Param)
 func (w *WebHandler) GET(path string, req Req) {
 	//初始化方法
 	w.initHandler("GET", path, req)
-
 }
 
 func (w *WebHandler) POST(path string, req Req) {
@@ -73,7 +67,7 @@ func (w *WebHandler) OPTIONS(path string, req Req) {
 
 }
 func (w *WebHandler) initHandler(method, path string, req Req) {
-	s, param, err := handler.ExtractURL(handler.DealWithUrl(path))
+	s, param, err := ExtractURL(DealWithUrl(path))
 	if err != nil {
 		log.Println("提取参数错误")
 	}
